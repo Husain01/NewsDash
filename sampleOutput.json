@@ -1,0 +1,46 @@
+{
+  "status": "ok",
+  "totalResults": 4,
+  "articles": [
+    {
+      "source": { "id": "engadget", "name": "Engadget" },
+      "author": "https://www.engadget.com/about/editors/jon-fingas",
+      "title": "Home computer legend Sir Clive Sinclair dies at 81 | Engadget",
+      "description": "Sir Clive Sinclair, who created the pocket calculator and one of the best-known early home PCs, has died at 81..",
+      "url": "https://www.engadget.com/clive-sinclair-dead-obituary-212309487.html",
+      "urlToImage": "https://s.yimg.com/os/creatr-uploaded-images/2021-09/0f47b0d0-1728-11ec-bddd-763fe74b1cd6",
+      "publishedAt": "2021-09-16T21:37:22.7246049Z",
+      "content": "The tech industry just lost one of its best-known inventors. The Guardianreports Sir Clive Sinclair died early on September 16th at 81 following a long illness. He's best known for his namesake compa… [+1469 chars]"
+    },
+    {
+      "source": { "id": "independent", "name": "Independent" },
+      "author": "Joe Middleton",
+      "title": "Sir Clive Sinclair, inventor behind Spectrum computer and C5, dies aged 81",
+      "description": "Technology pioneer Sir Clive Sinclair has died at the age of 81, his family have confirmed.",
+      "url": "http://www.independent.co.uk/news/uk/home-news/clive-sinclair-dead-spectrum-c5-b1921670.html",
+      "urlToImage": "https://static.independent.co.uk/2020/08/19/11/breaking-news.png?width=1200&auto=webp&quality=75",
+      "publishedAt": "2021-09-16T18:49:36Z",
+      "content": "Technology pioneer Sir Clive Sinclair has died at the age of 81, his family have confirmed.\r\nThe entrepreneur was most widely known for popularising the use of a home computer and was also the invent… [+1042 chars]"
+    },
+    {
+      "source": { "id": "national-geographic", "name": "National Geographic" },
+      "author": null,
+      "title": "Bonus Episode: In Conversation: Reframing Black History and Culture",
+      "description": "National Geographic presents In Conversation, a special podcast episode featuring explorer Tara Roberts, computer scientist Gloria Washington, and photographer Ruddy Roye. Through their dynamic work across maritime archeology, artificial intelligence, and pho…",
+      "url": "https://www.nationalgeographic.com/podcasts/overheard/season-5/bonus-conversation-reframing-black-history-culture-month.html",
+      "urlToImage": "https://www.nationalgeographic.com/content/dam/ngdotcom/rights-exempt/podcasts/Overheard/season5/bonusBHM/collage-3portraits2.jpg",
+      "publishedAt": "2021-02-17T14:37:22.7296515Z",
+      "content": null
+    },
+    {
+      "source": { "id": "the-sport-bible", "name": "The Sport Bible" },
+      "author": "Adnan Riaz",
+      "title": "Supercomputer Predicts The Champions League Winner For 2019-20 Season",
+      "description": "BT Sport's The Script predicted if Jurgen Klopp would lead Liverpool to their second consecutive Champions League trophy.",
+      "url": "http://www.thesportbible.com/football/news-supercomputer-predicts-the-champions-league-winner-for-2019-20-season-20190829",
+      "urlToImage": "http://beta.ems.ladbiblegroup.com/s3/content/808x455/4120a9305d6766c411d9733bd6edb2f8.png",
+      "publishedAt": "2019-08-29T06:51:10Z",
+      "content": "Liverpool will fall short of successfully defending their Champions League crown, according to a supercomputer simulation.\r\nThe Reds became champions of Europe for a sixth time in June when they beat… [+1862 chars]"
+    }
+  ]
+}
