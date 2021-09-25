@@ -8,7 +8,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 
 
 const News =(props)=> {
-    const [articles, setArticles] = useState([])
+    const [data, setData] = useState([])
     const [loading, setLoading] = useState(true)
     const [page, setPage] = useState(1)
     const [totalResults, setTotalResults] = useState(0)
@@ -21,14 +21,15 @@ const News =(props)=> {
 
     const  updateNews = async () =>  {
       props.setProgress(10);
-      const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page}&pageSize=${props.pageSize}`;
+      // const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page}&pageSize=${props.pageSize}`;
+      const url = `http://api.mediastack.com/v1/news?access_key=${props.apiKey}&categories=${props.category}&country=${props.country}&languages=${props.language}&limit=25&sort=published_desc`;
       setLoading(true)
-      let data =await fetch(url);
+      let data1 =await fetch(url);
       props.setProgress(30);
-      let parsedData = await data.json();
+      let parsedData = await data1.json();
       props.setProgress(50);
-      setArticles(parsedData.articles)
-      setTotalResults(parsedData.totalResults)
+      setData(parsedData.data)
+      setTotalResults(parsedData.pagination.total)
       setLoading(false)
       
         props.setProgress(100);
@@ -76,12 +77,12 @@ const News =(props)=> {
 
     const fetchMoreData = async() => {
       // this.setState({page: page + 1});
-      const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page+1}&pageSize=${props.pageSize}`;
+      const url = `http://api.mediastack.com/v1/news?access_key=${props.apiKey}&categories=${props.category}&country=${props.country}&languages=${props.language}&limit=25&sort=published_desc`;
       setPage(page+1);
-      let data =await fetch(url);
-      let parsedData = await data.json();
-      setArticles(articles.concat(parsedData.articles));
-      setTotalResults(parsedData.totalResults);
+      let data1 =await fetch(url);
+      let parsedData = await data1.json();
+      setData(data.concat(parsedData.data));
+      setTotalResults(parsedData.pagination.total);
       setLoading(false)
     };
 
@@ -91,16 +92,16 @@ const News =(props)=> {
         <h2 className='text-center ' style={{marginTop: "5rem"}}>NewsDash - Top {capitalizeFirstLetter(props.category)} Headlines</h2>
         {loading && <Spinner/>}
         <InfiniteScroll
-          dataLength={articles.length}
+          dataLength={data.length}
           next={fetchMoreData}
-          hasMore={articles.length !== totalResults}
+          hasMore={data.length !== totalResults}
           loader={<Spinner/>}
         >
           <div className="container">
         <div className="row">
-        {articles.map((e)=>{
+        {data.map((e)=>{
           return <div className="col-md-4" key={e.url}>
-            <NewsItem  title={e.title?e.title:''} description={e.description?e.description.slice(0, 200):''}imageUrl={e.urlToImage?e.urlToImage:"http://www.tgsin.in/images/joomlart/demo/default.jpg"} newsUrl = {e.url} author={e.author} date={e.publishedAt} source={e.source.name} />
+            <NewsItem  title={e.title?e.title:''} description={e.description?e.description.slice(0, 200):''}image={e.image?e.image:"http://www.tgsin.in/images/joomlart/demo/default.jpg"} newsUrl = {e.url} author={e.author} date={e.published_at} source={e.source.name} />
           </div>
           
         })}
