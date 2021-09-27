@@ -32,18 +32,38 @@ const Navbar = () => {
           <Link className="nav-link" to="/about">About</Link>
         </li> */}
               <li className="nav-item">
+                <Link className="nav-link" to="/world">
+                  World
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/india">
+                  India
+                </Link>
+              </li>
+              <li className="nav-item">
                 <Link className="nav-link" to="/business">
                   Business
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/entertainment">
-                  Entertainment
+                <Link className="nav-link" to="/general">
+                  General
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/general">
-                  General
+                <Link className="nav-link" to="/technology">
+                  Technology
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/startup">
+                  Startup
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/entertainment">
+                  Entertainment
                 </Link>
               </li>
               <li className="nav-item">
@@ -59,11 +79,6 @@ const Navbar = () => {
               <li className="nav-item">
                 <Link className="nav-link" to="/sports">
                   Sports
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/technology">
-                  Technology
                 </Link>
               </li>
             </ul>
