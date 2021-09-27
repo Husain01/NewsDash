@@ -12,7 +12,7 @@ const News =(props)=> {
     const [loading, setLoading] = useState(true)
     // const [page, setPage] = useState(1)
     const [totalResults, setTotalResults] = useState(0)
-    const [limit, setLimit] = useState(25)
+    const limit=25
     const [offset, setOffset] = useState(0)
     
 
