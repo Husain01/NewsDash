@@ -10,8 +10,10 @@ import InfiniteScroll from "react-infinite-scroll-component";
 const News =(props)=> {
     const [data, setData] = useState([])
     const [loading, setLoading] = useState(true)
-    const [page, setPage] = useState(1)
+    // const [page, setPage] = useState(1)
     const [totalResults, setTotalResults] = useState(0)
+    const [limit, setLimit] = useState(25)
+    const [offset, setOffset] = useState(0)
     
 
      const capitalizeFirstLetter = (string) => {
@@ -22,7 +24,7 @@ const News =(props)=> {
     const  updateNews = async () =>  {
       props.setProgress(10);
       // const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page}&pageSize=${props.pageSize}`;
-      const url = `http://api.mediastack.com/v1/news?access_key=${props.apiKey}&categories=${props.category}&country=${props.country}&languages=${props.language}&limit=25&sort=published_desc`;
+      const url = `http://api.mediastack.com/v1/news?access_key=${props.apiKey}&categories=${props.category}&countries=${props.country}&languages=${props.language}&limit=${limit}&offset=${offset}&sort=published_desc`;
       setLoading(true)
       let data1 =await fetch(url);
       props.setProgress(30);
@@ -77,8 +79,9 @@ const News =(props)=> {
 
     const fetchMoreData = async() => {
       // this.setState({page: page + 1});
-      const url = `http://api.mediastack.com/v1/news?access_key=${props.apiKey}&categories=${props.category}&country=${props.country}&languages=${props.language}&limit=25&sort=published_desc`;
-      setPage(page+1);
+      setOffset(offset+25);
+      const url = `http://api.mediastack.com/v1/news?access_key=${props.apiKey}&categories=${props.category}&countries=${props.country}&languages=${props.language}&limit=${limit}&offset=${offset+25}&sort=published_desc`;
+      // setLimit(limit<=75?limit+25:limit);
       let data1 =await fetch(url);
       let parsedData = await data1.json();
       setData(data.concat(parsedData.data));
@@ -101,7 +104,7 @@ const News =(props)=> {
         <div className="row">
         {data.map((e)=>{
           return <div className="col-md-4" key={e.url}>
-            <NewsItem  title={e.title?e.title:''} description={e.description?e.description.slice(0, 200):''}image={e.image?e.image:"http://www.tgsin.in/images/joomlart/demo/default.jpg"} newsUrl = {e.url} author={e.author} date={e.published_at} source={e.source.name} />
+            <NewsItem  title={e.title?e.title:''} description={e.description?e.description.slice(0, 200):''}image={e.image?e.image:"http://www.tgsin.in/images/joomlart/demo/default.jpg"} newsUrl = {e.url} author={e.author} date={e.published_at} source={e.source} />
           </div>
           
         })}
