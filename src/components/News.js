@@ -101,7 +101,7 @@ const News =(props)=> {
         <div className="row">
         {articles.map((e)=>{
           return <div className="col-md-4" key={e.url}>
-            <NewsItem  title={e.title?e.title:''} description={e.content?e.content.slice(0, 200):''}image={e.imageUrl?e.imageUrl:"http://www.tgsin.in/images/joomlart/demo/default.jpg"} newsUrl = {e.url} author={e.author} date={e.date} 
+            <NewsItem  title={e.title?e.title:''} description={e.content?e.content:''}image={e.imageUrl?e.imageUrl:"http://www.tgsin.in/images/joomlart/demo/default.jpg"} newsUrl = {e.url} author={e.author} date={e.date} 
             // source={e.source.name} 
             />
           </div>
